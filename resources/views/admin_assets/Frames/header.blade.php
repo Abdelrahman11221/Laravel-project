@@ -220,27 +220,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('contact.data')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contact</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Course Form</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Course Data</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Teacher Form</p>
                 </a>
             </li>
             </ul>

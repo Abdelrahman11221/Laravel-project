@@ -35,6 +35,10 @@ class RepoServiceProvider extends ServiceProvider
             'App\Http\Interfaces\PlanInterface',
             'App\Http\Repositories\PlanRepository'
         );
+        $this->app->bind(
+            'App\Http\Interfaces\ContactInterface',
+            'App\Http\Repositories\ContactRepository'
+        );
     }
 
     /**

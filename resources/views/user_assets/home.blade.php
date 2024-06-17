@@ -21,7 +21,6 @@ Template 2106 Soft Landing
     <link rel="stylesheet" href="{{asset('front/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/font-awesome.min.css')}}">
-
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{asset('front/css/tooplate-style.css')}}">
 
@@ -77,7 +76,7 @@ Template 2106 Soft Landing
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-
+                {{-- {{dd(Auth::id())}} --}}
                     <div class="col-md-offset-3 col-md-6 col-sm-12">
                         <div class="home-info">
                             <h3>professional landing page</h3>
@@ -158,7 +157,7 @@ Template 2106 Soft Landing
 
                     <div class="col-md-6 col-sm-6">
                         <div class="feature-image">
-                            <img src="images/feature-mockup.png" class="img-responsive" alt="Thin Laptop">                             
+                            <img src="{{asset('front/images/feature-mockup.png')}}" class="img-responsive" alt="Thin Laptop">                             
                         </div>
                     </div>
 
@@ -169,51 +168,30 @@ Template 2106 Soft Landing
 
     <!-- ABOUT -->
     <section id="about" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row">
-
-                    <div class="col-md-offset-3 col-md-6 col-sm-12">
-                        <div class="section-title">
-                            <h1>Professional Team for you</h1>
+    <div class="container">
+        <div class="row">
+            
+                <div class="section-title">
+                    <h1>Professional Team for you</h1>
+                </div>
+            
+            <br>
+            <div class="owl-carousel owl-theme">
+                @foreach ($team as $item)
+                    <div class="team-thumb">
+                        <img src="{{asset('images/team/' . $item->img) }}" class="img-responsive" alt="Andrew Orange">
+                        <div class="team-info team-thumb-up">
+                            <h2>{{$item->name}}</h2>
+                            <small>{{$item->job_title}}</small>
+                            <p>{{$item->description}}</p>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-4">
-                        <div class="team-thumb">
-                            <img src="images/team-image1.jpg" class="img-responsive" alt="Andrew Orange">
-                            <div class="team-info team-thumb-up">
-                                <h2>Andrew Orange</h2>
-                                <small>Art Director</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                        <div class="team-thumb">
-                            <div class="team-info team-thumb-down">
-                                <h2>Catherine Soft</h2>
-                                <small>Senior Manager</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            </div>
-                            <img src="images/team-image2.jpg" class="img-responsive" alt="Catherine Soft">
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                        <div class="team-thumb">
-                            <img src="images/team-image3.jpg" class="img-responsive" alt="Jack Wilson">
-                            <div class="team-info team-thumb-up">
-                                <h2>Jack Wilson</h2>
-                                <small>CEO / Founder</small>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
+                @endforeach
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
 
     <!-- TESTIMONIAL -->
@@ -236,7 +214,7 @@ Template 2106 Soft Landing
                                 <div class="item">
                                         <h3>Vestibulum tempor facilisis efficitur. Sed nec nisi sit amet nibh pellentesque elementum. In viverra ipsum ornare sapien rhoncus ullamcorper.</h3>
                                         <div class="testimonial-item">
-                                            <img src="images/tst-image1.jpg" class="img-responsive" alt="Michael">
+                                            <img src="{{asset('front/images/tst-image1.jpg')}}" class="img-responsive" alt="Michael">
                                             <h4>Michael</h4>
                                         </div>
                                 </div>
@@ -244,7 +222,7 @@ Template 2106 Soft Landing
                                 <div class="item">
                                         <h3>Donec pretium tristique elit eget sodales. Pellentesque posuere, nunc id interdum venenatis, leo odio cursus sapien, ac malesuada nisl libero eget urna.</h3>
                                         <div class="testimonial-item">
-                                            <img src="images/tst-image2.jpg" class="img-responsive" alt="Sofia">
+                                            <img src="{{asset('front/images/tst-image2.jpg')}}" class="img-responsive" alt="Sofia">
                                             <h4>Sofia</h4>
                                         </div>
                                 </div>
@@ -252,7 +230,7 @@ Template 2106 Soft Landing
                                 <div class="item">
                                         <h3>Lorem ipsum dolor sit amet, consectetur adipisicing eiusmod tempor incididunt ut labore et dolore magna.</h3>
                                         <div class="testimonial-item">
-                                            <img src="images/tst-image3.jpg" class="img-responsive" alt="Monica">
+                                            <img src="{{asset('front/images/tst-image3.jpg')}}" class="img-responsive" alt="Monica">
                                             <h4>Monica</h4>
                                         </div>
                                 </div>
@@ -345,22 +323,25 @@ Template 2106 Soft Landing
             <div class="row">
 
                     <div class="col-md-offset-1 col-md-10 col-sm-12">
-                        <form id="contact-form" role="form" action="" method="post">
+                        <form id="contact-form" role="form" action="{{route('post.contact')}}" method="post">
+                            @csrf
                             <div class="section-title">
                                 <h1>Say hello to us</h1>
                             </div>
-
                             <div class="col-md-4 col-sm-4">
-                                <input type="text" class="form-control" placeholder="Full name" name="name" required="">
+                                <input type="text" class="form-control" placeholder="Full name" name="name" >
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <input type="email" class="form-control" placeholder="Email address" name="email" required="">
+                                <input type="email" class="form-control" placeholder="Email address" name="email" >
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <input type="submit" class="form-control" name="send message" value="Send Message">
+                                <input type="submit" class="form-control" name="message" value="Send Message">
                             </div>
                             <div class="col-md-12 col-sm-12">
-                                <textarea class="form-control" rows="8" placeholder="Your message" name="message" required=""></textarea>
+                                <textarea class="form-control" rows="8" placeholder="Your message" name="message"></textarea>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <input type="hidden" class="form-control" name="user_id" value="{{Auth::id()}}">
                             </div>
                         </form>
                     </div>
@@ -402,6 +383,5 @@ Template 2106 Soft Landing
     <script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('front/js/smoothscroll.js')}}"></script>
     <script src="{{asset('front/js/custom.js')}}"></script>
-
 </body>
 </html>

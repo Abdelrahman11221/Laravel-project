@@ -412,63 +412,96 @@ http://www.tooplate.com/view/2106-soft-landing
       ABOUT              
   -----------------------------------------*/
 
-  #about .col-md-4 {
-    margin: 0;
-    padding: 0;
-  }
+  #about .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-  .team-thumb {
+.team-thumb {
     background: #ffffff;
     position: relative;
     overflow: hidden;
-  }
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-  .team-thumb-up:after {
+.team-thumb-up:after, .team-thumb-down:after {
     display: block;
     margin: 0 auto;
     position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+}
+
+.team-thumb-up:after {
     top: -15px;
     right: 0;
     left: 0;
-    content: "";
-    width: 0;
-    height: 0;
     border-right: 15px solid transparent;
     border-left: 15px solid transparent;
     border-bottom: 15px solid #ffffff;
-  }
+}
 
-  .team-thumb-down:after {
-    display: block;
-    margin: 0 auto;
-    position: absolute;
+.team-thumb-down:after {
     bottom: -15px;
     right: 0;
     left: 0;
-    content: "";
-    width: 0;
-    height: 0;
     border-right: 15px solid transparent;
     border-left: 15px solid transparent;
     border-top: 15px solid #ffffff;
-  }
+}
 
-  .team-info {
+.team-info {
     position: relative;
-    padding: 40px;
-  }
+    padding: 20px;
+    text-align: center;
+}
 
-  .team-info h2 {margin: 0;}
+.team-info h2 {
+    margin: 10px 0 5px;
+}
 
-  .team-info small {
+.team-info small {
     display: block;
     font-size: 18px;
     margin: 5px 0 10px 0;
-  }
+    color: #777;
+}
 
-  .team-thumb img {
+.team-thumb img {
     width: 100%;
-  }
+    border-bottom: 1px solid #ddd;
+}
+
+.owl-carousel .owl-item {
+    padding: 100px;
+}
+
+.owl-carousel .owl-nav {
+    display: none;
+}
+
+.owl-carousel .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-carousel .owl-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.owl-carousel .owl-dot.active {
+    background: #333;
+}
+
 
 
 
@@ -502,14 +535,14 @@ http://www.tooplate.com/view/2106-soft-landing
 
   .testimonial-info {
     background: #202020;
-    padding: 60px;
+    padding: 15px;
     height: 65vh;
   }
 
   .testimonial-info h3 {
     color: #d9d9d9;
     font-style: italic;
-    margin-top: 5px;
+    margin-top: -60px;
   }
 
   .testimonial-info .item {
@@ -533,8 +566,8 @@ http://www.tooplate.com/view/2106-soft-landing
   .testimonial-item img {
     border: 3px solid #ffffff;
     border-radius: 100px;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     margin-right: 10px;
   }
 
@@ -640,7 +673,7 @@ http://www.tooplate.com/view/2106-soft-landing
 
 
   /*---------------------------------------
-     FOOTER              
+    FOOTER              
   -----------------------------------------*/
 
   footer {
@@ -654,7 +687,7 @@ http://www.tooplate.com/view/2106-soft-landing
 
 
   /*---------------------------------------
-     SOCIAL ICON              
+    SOCIAL ICON              
   -----------------------------------------*/
 
   .social-icon {
