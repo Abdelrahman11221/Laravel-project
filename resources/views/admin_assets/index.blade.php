@@ -36,7 +36,9 @@
         </div>
         </div>
         <div class="card-body">
-        Start creating your amazing application!
+            <h2>
+                For Soft Landing website management ..!  
+            </h2>
         </div>
         <!-- /.card-body -->
 @include('admin_assets.frames.footer')
